@@ -3,6 +3,7 @@ package com.dailycodework.lakesidehotel.controller;
 import com.dailycodework.lakesidehotel.model.Room;
 import com.dailycodework.lakesidehotel.response.RoomResponse;
 import com.dailycodework.lakesidehotel.service.IRoomService;
+import com.dailycodework.lakesidehotel.service.RoomServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ import java.sql.SQLException;
 @RequiredArgsConstructor
 @RequestMapping("/rooms")
 public class RoomController {
-    private IRoomService roomService;
+    private final IRoomService roomService;
 
     @PostMapping("/add/new-room")
     public ResponseEntity<RoomResponse> addNewRoom(
